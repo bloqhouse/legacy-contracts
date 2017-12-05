@@ -1,13 +1,12 @@
 pragma solidity ^0.4.4;
 
-import 'zeppelin-solidity/contracts/token/StandardToken.sol';
-import 'zeppelin-solidity/contracts/lifecycle/Pausable.sol';
+import 'zeppelin-solidity/contracts/token/PausableToken.sol';
 import "./Whitelist.sol";
 
-contract BloqToken is StandardToken, Pausable {
+contract BloqToken is PausableToken {
 
-	string public name = 'TutorialToken';
-	string public symbol = 'TT';
+	string public name = 'BloqToken';
+	string public symbol = 'BT';
 	uint public decimals = 0;
 	
 	uint[] public cap = [0, 100, 1000];
@@ -41,10 +40,6 @@ contract BloqToken is StandardToken, Pausable {
 		return true;
 	}
 	
-	function transfer(address _to, uint256 _value) public whenNotPaused validateTransfer(_to, _value) returns (bool) { return super.transfer(_to, _value); }
-	function transferFrom(address _to, uint256 _value) public whenNotPaused validateTransfer(_to, _value) returns (bool) { return super.transfer(_to, _value); }
-	function approve(address _spender, uint256 _value) public whenNotPaused returns (bool) { return super.approve(_spender, _value); }
-	function increaseApproval(address _spender, uint _addedValue) public whenNotPaused returns (bool success) { return super.increaseApproval(_spender, _addedValue); }
-	function decreaseApproval(address _spender, uint _subtractedValue) public whenNotPaused returns (bool success) { return super.decreaseApproval(_spender, _subtractedValue); }
-
+	function transfer(address _to, uint256 _value) public validateTransfer(_to, _value) returns (bool) { return super.transfer(_to, _value); }
+	function transferFrom(address _to, uint256 _value) public validateTransfer(_to, _value) returns (bool) { return super.transfer(_to, _value); }
 }
