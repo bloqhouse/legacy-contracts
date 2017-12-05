@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "lite-server",
+    "test": "truffle test"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "lite-server": "^2.3.0"
   },
   "dependencies": {
-    "zeppelin-solidity": "^1.4.0"
+    "zeppelin-solidity": "^1.4.0",
+    "truffle": "^4.0.1"
   }
 }
