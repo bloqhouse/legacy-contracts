@@ -3,13 +3,10 @@
 * npm install -g truffle
 * cd project_folder
 * npm install
-* truffle develop
-   * truffle(develop)> compile
-   * truffle(develop)> migrate
-   * truffle(develop)> test
+* ganache-cli --m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+* truffle migrate
    
-
 In an other console start the webserver:
 * npm run dev
 
-Initiate Metamask with the seedwords shown when you launched truffle develop.
+Initiate Metamask with the mnemonic: "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
