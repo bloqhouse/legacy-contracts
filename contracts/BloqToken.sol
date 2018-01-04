@@ -13,17 +13,17 @@ contract BloqToken is PausableToken {
 	uint256[] public wlCaps = [0, 0];
 
 	function BloqToken(address[] _tokenholders, uint256[] _balances, address _whitelist, uint256[] _caps) public {
-	  require(_tokenholders.length == _balances.length);
-	  
-	  uint256 supply = 0;
-	  for (uint256 i = 0; i < _tokenholders.length; i++) {
-		balances[_tokenholders[i]] = _balances[i];
-		supply = supply + _balances[i];
-	  }
-	  
-	  totalSupply = supply;
-	  wl = Whitelist(_whitelist);
-	  wlCaps = _caps;
+		require(_tokenholders.length == _balances.length);
+
+		uint256 supply = 0;
+		for (uint256 i = 0; i < _tokenholders.length; i++) {
+			balances[_tokenholders[i]] = _balances[i];
+			supply = supply + _balances[i];
+		}
+
+		totalSupply = supply;
+		wl = Whitelist(_whitelist);
+		wlCaps = _caps;
 	}
 	
 	modifier onlyWhitelisted(address _to, uint256 _value) {
