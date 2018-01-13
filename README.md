@@ -17,17 +17,21 @@ administration of the underlying security.
 
 ## Installation
 
-* npm install -g truffle
-* cd [your_project_folder]
-* npm install
-* ganache-cli --m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
-* truffle migrate
+```Bash
+npm install -g truffle
+cd [your_project_folder]
+npm install
+ganache-cli --m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+truffle migrate
+```
 
 Make sure that if you use a common mnemonic such as the above to start ganache-cli there are many others that work with the same keypairs,
 which is  risky if you deploy to public (test) networks)
 
-In an other console start the webserver:
-* npm run dev
+In an other console start the webserver
+```Bash
+npm run dev
+```
 
 Initiate Metamask with the mnemonic: "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
 And visit your local webserver to experiment with transfering tokens and whitelisting addresses.
@@ -38,4 +42,3 @@ And visit your local webserver to experiment with transfering tokens and whiteli
 docker run -d -p 8545:8545 --name="ganache" trufflesuite/ganache-cli:latest --m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
 docker build -t truffle .
 docker run --link:ganache truffle deploy
-```
