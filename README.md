@@ -25,9 +25,17 @@ administration of the underlying security.
 
 Make sure that if you use a common mnemonic such as the above to start ganache-cli there are many others that work with the same keypairs,
 which is  risky if you deploy to public (test) networks)
-   
+
 In an other console start the webserver:
 * npm run dev
 
 Initiate Metamask with the mnemonic: "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
 And visit your local webserver to experiment with transfering tokens and whitelisting addresses.
+
+## Docker
+
+```Bash
+docker run -d -p 8545:8545 --name="ganache" trufflesuite/ganache-cli:latest --m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+docker build -t truffle .
+docker run --link:ganache truffle deploy
+```
